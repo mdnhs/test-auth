@@ -1,6 +1,6 @@
-// File: app/dashboard/page.tsx
 import { redirect } from "next/navigation";
 import { auth } from "../auth";
+import LogoutButton from "../../components/LogoutButton"; // Adjust path based on your structure
 
 export default async function DashboardPage() {
   const session = await auth();
@@ -21,6 +21,9 @@ export default async function DashboardPage() {
         <p>
           <strong>User ID:</strong> {session.user.id}
         </p>
+      </div>
+      <div className="mt-6">
+        <LogoutButton />
       </div>
     </div>
   );
